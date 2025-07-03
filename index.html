@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <script src="js/crypto.js" defer></script>
+    <title>SECV</title>
+  </head>
+  <body>
+    <header class="container">
+      <h1>Standalone Encrypted Credential Vault (SCEV)</h1>
+    </header>
+    <main class="container">
+      <form id="credential-input-form" class="credential-form">
+        <input
+          id="title-input"
+          type="text"
+          placeholder="Title"
+          tabindex="1"
+          required
+        />
+        <input
+          id="username-input"
+          type="text"
+          placeholder="Username"
+          tabindex="2"
+        />
+        <input
+          id="password-input"
+          type="password"
+          placeholder="Password"
+          tabindex="3"
+          required
+        />
+        <input id="app-input" type="text" placeholder="App" tabindex="4" />
+        <input id="note-input" type="text" placeholder="Note" tabindex="5" />
+        <button type="submit" tabindex="6">Add</button>
+      </form>
+      <div class="credential-list">
+        <template id="list-item-template">
+          <li>
+            <div data-credential-id="-1">
+              <input
+                readonly
+                type="text"
+                data-title="credentialTitle"
+                required
+              />
+              <input readonly type="text" data-username="credentialUsername" />
+              <input
+                readonly
+                type="password"
+                data-password="credentialPassword"
+                required
+              />
+              <input readonly type="text" data-app="credentialApp" />
+              <input readonly type="text" data-note="credentialNote" />
+              <button>&#9998;</button>
+              <button>&#10539;</button>
+            </div>
+          </li>
+        </template>
+        <ul id="list-output"></ul>
+      </div>
+    </main>
+    <footer class="container">
+      <span>Credentials can be securely downloaded.</span>
+      <button>Download</button>
+    </footer>
+  </body>
+</html>
