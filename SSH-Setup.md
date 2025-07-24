@@ -1,4 +1,4 @@
-### In PowerShell
+### In **PowerShell**
 
 **Verify SSH Agent Installation**
 
@@ -50,7 +50,7 @@ ssh-add -L
 
 > _Make sure the identity was added._
 
-### In GitHub
+### In **GitHub**
 
 1. Login
 2. Open ==Settings== from menu by clicking on profile icon (Top-Right).
@@ -64,7 +64,7 @@ Get-Content .\hp_compaq_netflix_ssh.pub | Set-Clipboard
 ```
 
 **Verify SSH Setup**
-Use the following command in PowerShell.
+Use the following command in **PowerShell**.
 
 ```
 ssh -T git@github.com
@@ -75,13 +75,38 @@ ssh -T git@github.com
 1. Create a new repository.
 2. Follow the steps to push the local repository to remote.
 
+### **Important** (DO NOT SKIP)
+
+To make sure you push your changes with the correct user. Do the following.
+
+**Check the global settings for username and email**
+
+```
+git config --global user.name
+git config --global user.email
+```
+
+**Set the correct name and email is required**
+
+```
+git config --global user.name "Tarun Dev"
+git config --global user.email "tarun@dev.com"
+```
+
+**To set only for specific repository**
+
+```
+git config user.name "Tarun Dev"
+git config user.email "tarun@dev.com"
+```
+
 ### Troubleshooting
 
 **Authentication Fails**
 Open `.ssh/config`and add configuration the following configuration.
 
 ```
-Host github.com
+Host git@github.com
 AddKeysToAgent** yes
 IdentityFile** ~/.ssh/hp_compaq_netflix_ssh
 IdentitiesOnly yes
