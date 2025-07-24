@@ -81,7 +81,7 @@ ssh -T git@github.com
 Open `.ssh/config`and add configuration the following configuration.
 
 ```
-Host git@github.com
+Host github.com
 AddKeysToAgent** yes
 IdentityFile** ~/.ssh/hp_compaq_netflix_ssh
 IdentitiesOnly yes
